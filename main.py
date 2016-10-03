@@ -377,7 +377,7 @@ while True:
         print_guessed_letters()
         print_hangman(game.guesses)
         print_word()
-        print '\n\n\nGAME OVER!\n\n\n'
+        print '\n\nGAME OVER!'
         while True:
             play_again = raw_input('\n\nDo you want to play again? [y/n]: ').lower()
             if play_again != 'y' and play_again != 'n':
@@ -396,7 +396,7 @@ while True:
         print_guessed_letters()
         print_hangman(game.guesses)
         print_word()
-        print '\n\n\nCongratulations, you win!\n\n\n'
+        print '\n\nCongratulations, you win!'
         while True:
             play_again = raw_input('\n\nDo you want to play again? [y/n]: ').lower()
             if play_again != 'y' and play_again != 'n':
