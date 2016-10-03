@@ -233,7 +233,6 @@ class game:
         if letter not in chosen_word_num_letters:
             chosen_word_num_letters.append(letter)
     length_chosen_word = len(chosen_word)
-    i = 0
     wrong_guesses = 0
     correct_guesses = []
     guessed_letters = []
