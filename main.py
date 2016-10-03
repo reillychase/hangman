@@ -379,9 +379,9 @@ while True:
         print_word()
         print '\n\n\nGAME OVER!\n\n\n'
         while True:
-            play_again = raw_input('Do you want to play again? [y/n]: ').lower()
+            play_again = raw_input('\n\nDo you want to play again? [y/n]: ').lower()
             if play_again != 'y' and play_again != 'n':
-                print "ERROR: Please enter 'y' for yes or 'n' for no"
+                print "\n\nERROR: Please enter 'y' for yes or 'n' for no"
                 continue
             else:
                 break
@@ -398,9 +398,9 @@ while True:
         print_word()
         print '\n\n\nCongratulations, you win!\n\n\n'
         while True:
-            play_again = raw_input('Do you want to play again? [y/n]: ').lower()
+            play_again = raw_input('\n\nDo you want to play again? [y/n]: ').lower()
             if play_again != 'y' and play_again != 'n':
-                print "ERROR: Please enter 'y' for yes or 'n' for no"
+                print "\n\nERROR: Please enter 'y' for yes or 'n' for no"
                 continue
             else:
                 break
