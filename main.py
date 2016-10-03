@@ -234,7 +234,7 @@ class game:
             chosen_word_num_letters.append(letter)
     length_chosen_word = len(chosen_word)
     i = 0
-    guesses = 0
+    wrong_guesses = 0
     correct_guesses = []
     guessed_letters = []
     alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
@@ -252,14 +252,14 @@ def new_game():
             game.chosen_word_num_letters.append(letter)
     game.length_chosen_word = len(game.chosen_word)
     game.i = 0
-    game.guesses = 0
+    game.wrong_guesses = 0
     game.correct_guesses = []
     game.guessed_letters = []
     game.alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
                     'u','v', 'w', 'x', 'y', 'z']
 
-def print_hangman(guesses):
-    if (guesses == 0):
+def print_hangman(wrong_guesses):
+    if (wrong_guesses == 0):
         print '''
             ______
             |    |
@@ -269,27 +269,27 @@ def print_hangman(guesses):
        __________|__________
 
         '''
-    elif (guesses == 1):
-        print '''
-            ______
-            |    |
-            O    |
-                 |
-                 |
-       __________|__________
-
-        '''
-    elif (guesses == 2):
+    elif (wrong_guesses == 1):
         print '''
             ______
             |    |
             O    |
+                 |
+                 |
+       __________|__________
+
+        '''
+    elif (wrong_guesses == 2):
+        print '''
+            ______
+            |    |
+            O    |
             |    |
                  |
        __________|__________
 
         '''
-    elif (guesses == 3):
+    elif (wrong_guesses == 3):
         print '''
             ______
             |    |
@@ -299,7 +299,7 @@ def print_hangman(guesses):
        __________|__________
 
         '''
-    elif (guesses == 4):
+    elif (wrong_guesses == 4):
         print '''
             ______
             |    |
@@ -309,7 +309,7 @@ def print_hangman(guesses):
        __________|__________
 
         '''
-    elif (guesses == 5):
+    elif (wrong_guesses == 5):
         print '''
             ______
             |    |
@@ -353,7 +353,7 @@ def print_guessed_letters():
 
 while True:
     print_guessed_letters()
-    print_hangman(game.guesses)
+    print_hangman(game.wrong_guesses)
     print_word()
     while True:
         print "\n\nGuess a letter: ",
@@ -369,13 +369,13 @@ while True:
     game.guessed_letters.append(letter)
 
     if letter not in game.chosen_word:
-        game.guesses = game.guesses + 1
+        game.wrong_guesses = game.wrong_guesses + 1
     else:
         game.correct_guesses.append(letter)
 
-    if (game.guesses > 5):
+    if (game.wrong_guesses > 5):
         print_guessed_letters()
-        print_hangman(game.guesses)
+        print_hangman(game.wrong_guesses)
         print_word()
         print '\n\nGAME OVER!'
         while True:
@@ -394,7 +394,7 @@ while True:
 
     if len(game.correct_guesses) == len(game.chosen_word_num_letters):
         print_guessed_letters()
-        print_hangman(game.guesses)
+        print_hangman(game.wrong_guesses)
         print_word()
         print '\n\nCongratulations, you win!'
         while True:
