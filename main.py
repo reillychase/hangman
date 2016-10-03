@@ -251,7 +251,6 @@ def new_game():
         if letter not in game.chosen_word_num_letters:
             game.chosen_word_num_letters.append(letter)
     game.length_chosen_word = len(game.chosen_word)
-    game.i = 0
     game.wrong_guesses = 0
     game.correct_guesses = []
     game.guessed_letters = []
