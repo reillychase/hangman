@@ -1,2 +1,2 @@
 # Python Hangman
-The classic game Hangman, written in Python
+The classic game of Hangman, written in Python
